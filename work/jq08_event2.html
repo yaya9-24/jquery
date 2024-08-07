@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+
+            //대상의 하위노드에 추가-기존하위 다음에 추가
+            
+            let count = 0;
+            $("#btn_append").on("click",function(){
+                count++;
+                $("#div01").append("<strong>javascript"+count+"</strong>");
+            });
+
+            // $("#title").on({mouseenter:function(){
+            //     console.log("mouseenter...");
+            //     $(this).css("color","red");
+            // },mouseleave:function(){
+            //     console.log("mouseleave...");
+            //     $(this).css("color","black");
+            // }});
+
+            $("#title").on({mouseover:function(){
+                console.log("mouseover...");
+                $(this).css("color","red");
+            },mouseout:function(){
+                console.log("mouseout...");
+                $(this).css("color","black");
+            }});
+
+        
+            $("#title3").hover(function(){
+                console.log("hover...");
+                $(this).css("color","red");
+            },function(){
+                console.log("hover...");
+                $(this).css("color","black");
+            });
+
+            let bool = true; 
+            $("#title2").on("click",function(){
+                
+                if(bool){
+                    $(this).css("color","yellow");
+                    
+                }else{
+                    $(this).css("color","black");
+                }
+                bool = !bool;
+            });
+
+            $("#input01").on("keypress",function(){
+                console.log("keypress...");
+            
+            });
+
+            $("#input02").on("keyup",function(){
+                console.log("keyup...");
+            
+            });
+
+            $("#searchKey").on("change",function(){
+                console.log("select change...");
+                console.log($(this).val());
+                
+            });
+
+            $("#hobby1").on("change",function(){
+                console.log("checkbox change...");
+                console.log($(this).val());
+                console.log($(this).is(":checked"));
+                
+            });
+
+            $("#form01").on("submit",function(){
+                console.log("form01 submit...");
+                let input01 = $("#input01").val();
+                console.log(input01,input01.length);
+                if (input01.length<5) {
+                    return false;
+                }
+                return true;
+            
+            });
+
+            let arr = $(".p_txt").each(function(){
+                $(this).hover(function(){
+                console.log("hover...");
+                $(this).css("color","red");
+            },function(){
+                console.log("hover...");
+                $(this).css("color","black");
+            });
+            });
+            
+            $(".p_txt").each(function(){
+                $(this).hover(function(){
+                console.log("hover...");
+                $(this).css("color","red");
+            },function(){
+                console.log("hover...");
+                $(this).css("color","black");
+            });
+            });
+
+        });//end ready...
+    </script>
+</head>
+<body>
+    <h1 id="title">mouseenter</h1>
+    <hr>
+    <h1 id="title2">click</h1>
+    <hr>
+    <h1 id="title3">hover</h1>
+    <hr>
+    <div id="div01">
+        <strong>jquery</strong>
+    </div>
+    <button id="btn_append">append</button>
+    <hr>
+    <form action="#" id="form01">
+        <input type="text" id="input01" name="input01" value="admin">
+        <input type="text" id="input02" name="input02" value="hi1111">
+        <select name="searchKey" id="searchKey">
+            <option value="name">name</option>
+            <option value="age">age</option>
+        </select>
+        <input type="checkbox" id="hobby1" value="java">java
+        <input type="submit" value="전송">
+    </form>
+
+    <p class="p_txt">hello jquery</p>
+    <p class="p_txt">hello jquery</p>
+    <p class="p_txt">hello jquery</p>
+
+    <p class="p_txt2">hello jquery2</p>
+    <p class="p_txt2">hello jquery2</p>
+    <p class="p_txt2">hello jquery2</p>
+
+</body>
+</html>

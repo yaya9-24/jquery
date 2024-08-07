@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            
+            //<h1 id="id">id</h1> >>> div01에 btn_append 버튼클릭시 추가
+            $("#btn_append").click(function(){
+                console.log("click...");
+                $("#div01").append('<h1 id="id">id</h1>');
+            });
+
+            // btn_append버튼클릭시 div01 하위노드 비우기
+            $("#btn_empty").click(function(){
+                $("#div01").empty();
+
+               
+            });
+
+            // btn_append버튼클릭시 div01 태그제거
+            $("#btn_remove").click(function(){
+                
+                $("#div01").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="div01"></div>
+    <button id="btn_append">append</button>
+    <button id="btn_empty">empty</button>
+    <button id="btn_remove">remove</button>
+</body>
+</html>

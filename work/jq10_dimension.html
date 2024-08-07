@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #div01 {
+            height: 100px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+        }
+        </style>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            let width = $("#div01").width();
+            console.log(width);
+            let height = $("#div01").height();
+            console.log(height);
+
+            console.log($("#div01").innerWidth()); //+padding
+            console.log($("#div01").innerHeight()); //+padding
+
+            $("#btn").click(function(){
+                console.log("click...");
+                $("#div01").height(200);
+                $("#div01").height(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="div01">
+        Hello jquery
+        <p>javascript</p>
+        <p>css</p>
+    </div>
+    <button id="btn">click</button>
+</body>
+</html>

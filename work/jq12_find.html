@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #div01 {
+            height: 500px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+        }
+        </style>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            
+            $("#btn").click(function(){
+                console.log("click...");
+                //$("#div01").css({"color":"red","border":"2px solid red"});
+                //$("#div01").find("*").css({"color":"red","border":"2px solid red"});
+                //div 자식 태그에만 적용시킨다. children은
+                //$("#div01").find("p").css({"color":"red","border":"2px solid red"});
+                //$("#div01").find("span").css({"color":"red","border":"2px solid red"});
+                //$("#div01").find("span:first").css({"color":"red","border":"2px solid red"});
+                //$("#div01").find("span:last").css({"color":"red","border":"2px solid red"});
+
+                $("#div01").children("p:first").append("<h1>hello</h1>");
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="div01">
+        Hello jquery
+        <p>javascript</p>
+        <p>javascript</p>
+        <span>css</span>
+        <span>css</span>
+        <span>css</span>
+    </div>
+    <hr>
+    <button id="btn">click</button>
+</body>
+</html>

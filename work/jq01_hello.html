@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            //let id = document.getElementById("id");
+            //let id = document.querySelector("#id");
+            let id = $("#id"); //Selector-선택자(#아이디, .클래스명, 태그명, *)
+            console.log(id);
+            let cls_arr = $(".cls");
+            console.log(cls_arr);
+            
+            let tag_arr = $("h3");
+            console.log(tag_arr);
+            
+        });
+    </script>
+</head>
+<body>
+    <h1 id="id">id</h1>
+    <h1 class="cls">class1</h1>
+    <h1 class="cls">class2</h1>
+    <h1 class="cls">class3</h1>
+    <h3>tag1</h3>
+    <h3>tag2</h3>
+    <h3>tag3</h3>
+</body>
+</html>

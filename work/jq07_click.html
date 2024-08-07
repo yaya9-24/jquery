@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+
+            //대상의 하위노드에 추가-기존하위 다음에 추가
+            
+            let count = 0;
+            $("#btn_append").click(function(){
+                count++;
+                $("#div01").append("<strong>javascript"+count+"</strong>");
+            });
+
+            //대상의 하위노드에 추가- 기존하위 이전에 추가
+            let count2 = 0;
+            $("#btn_prepend").click(function(){
+                count2++;
+                $("#div02").prepend("<strong>javascript"+count2+"</strong>")
+            });
+
+            //대상의 이전에 추가
+            let count3 = 0;
+            $("#btn_before").click(function(){
+                count3++;
+                $("img").before("<strong>css"+count3+"</strong>");
+            });
+
+            //대상의 이후에 추가
+            let count4 = 0;
+            $("#btn_after").click(function(){
+                count4++;
+                $("img").after("<strong>css"+count4+"</strong>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>hello</h1>
+    <div id="div01">
+        <strong>jquery</strong>
+    </div>
+    <button id="btn_append">append</button>
+
+    <hr>
+    <div id="div02">
+        <strong>jquery</strong>
+    </div>
+    <button id="btn_prepend">prepend</button><br>
+
+    <hr>
+    
+    <img src="images/0001.png" alt="">
+    <hr>
+    <button id="btn_before">before</button>
+    <button id="btn_after">after</button>
+</body>
+</html>
