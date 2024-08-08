@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #div01 {
+            height: 500px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+        }
+        </style>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            
+            $("#btn").click(function(){
+                console.log("click...");
+                let url = "http://localhost:8090/web10REST_API_war_exploded/json_object3.do?id=admin";
+                //Get방식 비동기통신
+                $.get(url,function(responseText){
+                        console.log(responseText);
+                        let obj = JSON.parse(responseText);
+                        $("#div01").html("<h1>"+obj.result+"</h1>");
+                        
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="div01">
+        Hello jquery
+        
+    </div>
+    <hr>
+    <button id="btn">click</button>
+
+
+    
+</body>
+</html>

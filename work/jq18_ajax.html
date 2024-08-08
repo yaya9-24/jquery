@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #div01 {
+            height: 500px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+        }
+        </style>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            
+            $("#btn").click(function(){
+                console.log("click...");
+
+                //ajax함수를 사용한(get,post선택가능) 비동기통신
+                let url2 ="http://localhost:8090/web10REST_API_war_exploded/json_object3.do";                
+                $.ajax({
+                    url:url2,
+                    type:"post", //get
+                    data:{id:"admin"},
+                    dataType:"json", //xml,html,text
+                    success:function(response,status,response_obj){
+                        console.log(response); //파싱된결과 객체
+                        console.log(status);
+                        console.log(response_obj);
+                        $("#div01").html("<h1>"+response.result+"</h1>");
+                        
+                    },
+                    error:function(ex){
+                        console.log(ex);
+                        
+                    }
+
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="div01">
+        Hello jquery
+        
+    </div>
+    <hr>
+    <button id="btn">click</button>
+
+
+    
+</body>
+</html>

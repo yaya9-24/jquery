@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #div01 {
+            height: 500px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+        }
+        </style>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            
+            $("#btn").click(function(){
+                console.log("click...");
+                //$(".p01").css("color","red"); 
+                //$("p.p01").css("color","red"); 
+                //$("p").css("color","blue").filter(".p01").css("color","red"); //바로 위 문법이랑 같은 효과다.
+
+                //$("span:first").css("font-size","20pt");
+                //$("span").first().css("font-size","20pt");
+                //$("span:eq(0)").css("font-size","20pt");
+                //$("span").eq(0).css("font-size","20pt");
+                //$("span").eq(-1).css("font-size","20pt");
+
+                $("p").not(".p01").css("color","red"); 
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="div01">
+        Hello jquery
+        <p>javascript1</p>
+        <p class="p01">javascript2</p>
+        <p class="p01">javascript3</p>
+        <h3>h3</h3>
+        <span class="p01">css1</span>
+        <span class="p01">css2</span>
+        <span>css3</span>
+        <h5>h5</h5>
+        <span>css4</span>
+        <span>css5</span>
+        <span>css6</span>
+    </div>
+    <hr>
+    <button id="btn">click</button>
+</body>
+</html>

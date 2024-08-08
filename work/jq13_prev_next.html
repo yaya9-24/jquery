@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #div01 {
+            height: 500px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+        }
+        </style>
+    <script>
+        // $()는 window.onload와 같다.
+        $(function (){
+            console.log("ready...");
+            
+            $("#btn").click(function(){
+                console.log("click...");
+                //$("h3").css("color","red"); //대상
+                //$("h3").prev().css("color","red"); //바로앞
+                //$("h3").next().css("color","red"); //바로다음
+                //$("h3").prevAll().css("color","red");//모든앞
+                //$("h3").nextAll().css("color","red");//모든다음
+
+                //$("h3").siblings().css("color","red"); // siblings()는 prevAll과 nextAll을 한꺼번에 실행
+                $("h3").nextUntil("h5").css("color","red");
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="div01">
+        Hello jquery
+        <p>javascript1</p>
+        <p>javascript2</p>
+        <p>javascript3</p>
+        <h3>h3</h3>
+        <span>css1</span>
+        <span>css2</span>
+        <span>css3</span>
+        <h5>h5</h5>
+        <span>css4</span>
+        <span>css5</span>
+        <span>css6</span>
+    </div>
+    <hr>
+    <button id="btn">click</button>
+</body>
+</html>
